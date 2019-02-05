@@ -1,0 +1,7 @@
+[user]
+    name = <Owner Name> 
+    email = <emal> 
+[commit]
+    template = /home/owner/.git_commit_template.txt
+[core]
+    editor = vim
