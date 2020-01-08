@@ -116,6 +116,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export ANDROID_HOME=/home/denzdacs/Android/Sdk
+exec zsh
 
-export PATH=$PATH:$ANDROID_HOME/tools/:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools
