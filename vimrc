@@ -1,12 +1,14 @@
 set ai
 set ci
 set si
-syntax on
 set ft=perl
+syntax on
 set bs=indent,eol,start
 set bdir=~/.vim
 set directory=~/.vim
 set number
+set nu
+set termguicolors
 
 set softtabstop=4
 set shiftwidth=4
@@ -24,22 +26,17 @@ set hlsearch
 set incsearch
 set background=dark
 
-execute pathogen#infect()
+call plug#begin()
+  Plug 'preservim/nerdtree'
+  Plug 'crusoexia/vim-monokai'
+  Plug 'leafgarland/typescript-vim'
+  Plug 'peitalin/vim-jsx-typescript'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
+
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 nmap <F2> :NERDTreeToggle<CR>
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-set rtp+=~/.fzf
-nmap <F3> :FZF<CR>
-
-syntax enable
+syntax on
 colorscheme monokai
